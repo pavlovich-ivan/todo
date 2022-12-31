@@ -1,7 +1,7 @@
 # Python
 venv
 migrations
-
+__cache__
 
 # Logs
 logs
