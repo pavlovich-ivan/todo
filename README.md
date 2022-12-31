@@ -18,6 +18,6 @@ $PROJECT_ROOT
         ├── router          # App routes
         ├── views           # Views components (pages)
         └── main.js         # App creation script
-    └── index.html
+    └── index.html          # HTML template for inserting code
 └── docs                    # Project documentation
 ```
