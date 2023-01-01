@@ -1,7 +1,12 @@
 # Python
 venv
 migrations
-__cache__
+pycache
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
 
 # Logs
 logs
@@ -23,8 +28,12 @@ coverage
 /cypress/screenshots/
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
+.vscode/* 
+!.vscode/settings.json 
+!.vscode/tasks.json 
+!.vscode/launch.json 
+!.vscode/extensions.json 
+.history
 .idea
 *.suo
 *.ntvs*
