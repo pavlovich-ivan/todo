@@ -1,6 +1,12 @@
 # Python
 venv
 migrations
+pycache
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
 
 
 # Logs
