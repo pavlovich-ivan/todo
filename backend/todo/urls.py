@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
     path('list/', views.output_list, name='output_list'),
     path('list/create/', views.CreateTask.as_view(), name='create_list'),
+    path('list/edit/<int:id>', views.edit_task),
 ]

@@ -27,3 +27,19 @@ class CreateTask(generics.GenericAPIView):
             serializer.save()
             return HttpResponseRedirect(redirect_to=reverse('output_list'))
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PATCH'])
+def edit_task(request, id):
+    try:
+        task = ToDoItem.objects.get(id=int(id))
+    except ToDoItem.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'PATCH':
+        serializer = ToDoItemCreateSerializer(task, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return HttpResponseRedirect(redirect_to=reverse('output_list')) # TODO change redirect 
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
