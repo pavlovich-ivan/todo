@@ -3,11 +3,7 @@ from django.urls import include, path
 from rest_framework import routers
 from . import views
 
-router = routers.DefaultRouter()
-router.register(r'ToDoLists', views.ToDoListViewSet)
-router.register(r'ToDoItems', views.ToDoItemViewSet)
-
 urlpatterns = [
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('list/', views.output_list, name='output_list'),
+    path('list/create/', views.CreateTask.as_view(), name='create_list'),
 ]

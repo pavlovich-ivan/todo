@@ -2,13 +2,14 @@
 from rest_framework import serializers
 from .models import *
 
-
-class ToDoListSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = ToDoList
-        fields = ('title',)
-
-class ToDoItemSerializer(serializers.HyperlinkedModelSerializer):
+class ToDoItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = ToDoItem
-        fields = ('title','description','due_date','todo_list')
+        fields = ('id', 'title', 'due_date','completed', 'important')
+
+
+
+class ToDoItemCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ToDoItem
+        fields = ('title', 'due_date', 'important')
